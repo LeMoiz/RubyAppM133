@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="display-4">Buch erfassen </h1>
+</div>
+<br>
+<%= form_with model: @book, url: create_book_path_url do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+<%= f.label :price %>
+<%= f.text_field :price %><br>
+<%= f.label :subject %>
+<select name="book[subject_id]" id="book_subject_id">
+<option value="">Auswahl</option>
+<option value="1">Rails</option>s
+<option value="2">Linux</option>
+<option value="3">SQL</option>
+<option value="4">Python</option>
+<option value="5">Bash</option>
+</select><br>
+<%= f.label :description %>
+<%= f.text_area :description %><br><%= submit_tag "Buch speichern" %><br>
+<%= link_to "Abbrechen", books_path %>
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_with model: @album, url: "/albums" do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+<%= f.collection_select :album_id, @album, :id, :name %>
+<%= f.submit "Album speichern" %>
+<%= link_to "Abbrechen", albums_path %>
+<% end %>
